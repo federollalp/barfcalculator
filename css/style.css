@@ -1,0 +1,325 @@
+/* --- General Styles --- */
+* { 
+    box-sizing: border-box; 
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: flex-start; 
+    min-height: 100dvh;
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 17px; 
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    width: 100%; 
+    margin-bottom: 20px;
+}
+
+.logo-principal { 
+    width: 250px; 
+    max-width: 80%; 
+    height: auto; 
+    margin: 10px 0; 
+    display: block; 
+}
+
+/* --- Steps and structure --- */
+.step {
+    display: flex;
+    flex-direction: column;
+    width: 340px; 
+    max-width: 100%;
+    gap: 15px;
+    margin: 0 auto;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.hidden { 
+    display: none !important; 
+}
+
+label { 
+    font-weight: bold; 
+    margin-bottom: 5px; 
+    text-align: center;
+    font-size: 1.1rem; 
+}
+
+input, select {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem; 
+}
+
+/* --- Bone broth --- */
+#caldoHuesos {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center; 
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.8s ease-in-out, opacity 0.8s ease-in-out, margin 0.8s ease-in-out;
+    margin: 0 auto;
+    pointer-events: none;
+    width: 100%;
+}
+
+#caldoHuesos.show-caldo {
+    max-height: 600px;
+    opacity: 1;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    pointer-events: auto;
+}
+
+.caldo-texto h4 {
+    margin: 0 0 10px 0;
+    font-size: 1rem; 
+    line-height: 1.4;
+    color: #444;
+}
+
+.logo-caldo { 
+    width: 200px; 
+    max-width: 85%; 
+    height: auto; 
+    margin: 0 auto; 
+    display: block; 
+    cursor: pointer; 
+    transition: transform 0.3s ease;
+}
+
+.logo-caldo:hover {
+    transform: scale(1.05);
+}
+
+/* --- Grids --- */
+.activity-grid, .condition-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 15px;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.condition-option:nth-child(5) {
+    grid-column: span 2;
+}
+
+.activity-option, .condition-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.activity-option img, .condition-option img {
+    width: 100%;
+    max-width: 120px; 
+    height: auto;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    background-color: #fff;
+    border: 2px solid transparent;
+}
+
+.activity-option span, .condition-option span {
+    margin-top: 8px;
+    font-weight: bold;
+    font-size: 0.9rem; 
+}
+
+.activity-option:hover img, .condition-option:hover img {
+    transform: scale(1.08);
+}
+
+.activity-option.selected img, .condition-option.selected img {
+    border: 3px solid #000;
+    transform: scale(1.05);
+}
+
+/* --- Buttons --- */
+button {
+    padding: 14px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: bold;
+    font-size: 1rem; 
+    transition: all 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+    background-color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Disabled status (gray and no clicks) */
+button:disabled {
+    background-color: #ccc;
+    color: #888;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.button-group { 
+    display: flex; 
+    gap: 10px; 
+    width: 100%; 
+    margin-top: 10px;
+}
+
+.button-group button { 
+    flex: 1; 
+}
+
+.button-group-result {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* --- Results and Boxes --- */
+.result {
+    display: flex;
+    flex-direction: column;
+    background-color: #dedfc8;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    margin: 20px 0;
+    width: 340px; 
+    max-width: 100%;
+    border: 2px solid #BBBF9A;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.result h3 { margin: 0; font-size: 1.2rem; }
+.result h1 { margin: 10px 0; font-size: 2.5rem; }
+.result h4 { margin: 5px 0 15px 0; color: #555; font-weight: normal; font-size: 1.1rem; }
+
+#purchase-link {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 20px;
+}
+
+#purchase-link .link-text {
+    text-decoration: underline;
+}
+
+#purchase-link:hover .link-text {
+    text-decoration: none;
+}
+
+.disclaimer-container {
+    width: 100%;
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #e4e6d0;
+    border-left: 5px solid #7a7d63;
+    border-radius: 8px;
+    text-align: left;
+    font-size: 1rem; 
+}
+
+.info-box-animated {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease-in-out, opacity 0.6s ease-in-out;
+}
+
+.info-box-animated.show-info { 
+    max-height: 500px; 
+    opacity: 1; 
+    margin-top: 10px;
+}
+
+/* --- Popups --- */
+.alert-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    transition: opacity 0.5s ease;
+}
+
+.alert-content {
+    background-color: white;
+    padding: 25px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    transform: scale(0.8);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.alert-content h2 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    color: #000;
+}
+
+.disclaimer-list {
+    text-align: left;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #444;
+    padding-left: 20px;
+    margin: 20px 0;
+}
+
+.disclaimer-list li {
+    margin-bottom: 10px;
+}
+
+.alert-overlay.show-alert {
+    opacity: 1 !important;
+}
+
+.alert-overlay.show-alert .alert-content {
+    transform: scale(1);
+}
+
+/* --- Footer --- */
+footer {
+    margin-top: auto;
+    padding: 20px;
+    color: #999;
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora BARF</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Calculadora BARF🥩</h1>
+        <img src="assets/logo ancestral01.png" alt="Logo Ancestral" class="logo-principal">
+    </header>
+
+    <div id="initial-disclaimer" class="alert-overlay hidden" style="opacity: 0;">
+        <div class="alert-content">
+            <h2>🐾Antes de empezar...</h2>
+            <ul class="disclaimer-list">
+                <li>Esta calculadora es para perros que <strong>YA consumen BARF.</strong> Si querés que tu perro comience a comer BARF, empezá por las dietas de transición 
+                    (<a href="https://transition1-calculator.netlify.app" target="_blank">Transición 1</a>, 
+                o <a href="https://transition2-calculator.netlify.app" target="_blank">Transición 2</a>).</li>
+                <li>Estas dietas <strong>NO son para embarazadas ni lactantes</strong>, ni para cachorros en crecimiento.</li>
+                <li>Son para <strong>perros sanos</strong>. Si tiene alguna patología en particular, consultar con vete nutricionista de confianza.</li>
+            </ul>
+            <button type="button" id="btn-accept-disclaimer" style="width: 100%;">Acepto✅</button>
+        </div>
+    </div>
+
+    <div id="step-1" class="step">
+        <label for="age">¿Cuántos años tiene tu ancestralito?</label>
+        <select id="age"></select>
+        <button type="button" id="btn-step-1">Siguiente</button>
+        <div id="caldoHuesos" class="caldo">
+            <div class="caldo-texto">
+                <h4>Vemos que para la edad de tu peludo, es recomendable incluir caldo de huesos🐶 (tocá la foto para pedirlo👇🏼)</h4>
+            </div>
+            <a href="https://www.ancestralfood.pet/search?q=caldo+de+huesos" target="_blank">
+                <img src="assets/caldo congelado.png" alt="Caldo" class="logo-caldo">
+            </a>
+        </div>
+    </div>
+    
+    <div id="step-2" class="step hidden">
+        <label for="weight">¿Cuánto pesa? (kg)</label>
+        <input type="number" id="weight" step="0.1" placeholder="Ej: 15.5">
+        <div class="button-group">
+            <button type="button" id="btn-back-2">← Volver</button>
+            <button type="button" id="btn-step-2">Siguiente</button>
+        </div>
+    </div>
+    
+    <div id="step-3" class="step hidden">
+        <label>¿Cómo es la condición física de tu animal?</label>
+        <div class="condition-grid">
+            <div class="condition-option" data-value="verySlow"><img src="assets/01.png"><span>Muy delgado</span></div>
+            <div class="condition-option" data-value="low"><img src="assets/11.png"><span>Delgado</span></div>
+            <div class="condition-option" data-value="normal"><img src="assets/22.png"><span>Normal</span></div>
+            <div class="condition-option" data-value="slightOverweight"><img src="assets/33.png"><span>Sobrepeso leve</span></div>
+            <div class="condition-option" data-value="markedOverweight"><img src="assets/44.png"><span>Sobrepeso marcado</span></div>
+        </div>
+        <input type="hidden" id="physical-condition">
+        <div class="button-group">
+            <button type="button" id="btn-back-3">← Volver</button>
+            <button type="button" id="btn-step-3">Siguiente</button>
+        </div>
+        <div id="condition-info" class="info-box-animated"><div id="condition-info-content" class="disclaimer-container"></div></div>
+    </div>
+    
+    <div id="step-4" class="step hidden">
+        <label>Estilo de vida de tu ancestralito</label>
+        <div class="activity-grid">
+            <div class="activity-option" data-value="lowActivity"><img src="assets/1.png"><span>Baja</span></div>
+            <div class="activity-option" data-value="normal"><img src="assets/2.png"><span>Normal</span></div>
+            <div class="activity-option" data-value="high"><img src="assets/3.png"><span>Alta</span></div>
+            <div class="activity-option" data-value="veryHigh"><img src="assets/4.png"><span>Muy alta</span></div>
+        </div>
+        <input type="hidden" id="life-style">
+        <div class="button-group">
+            <button type="button" id="btn-back-4">← Volver</button>
+            <button type="button" id="btn-step-4">Siguiente</button>
+        </div>
+        <div id="activity-info" class="info-box-animated"><div id="info-content" class="disclaimer-container"></div></div>
+    </div>
+
+    <div id="step-5" class="step hidden">
+        <label for="pet-name">¿Cómo se llama tu peludo?</label>
+        <input type="text" id="pet-name" placeholder="Escribí su nombre aquí..." required>
+        <div class="button-group">
+            <button type="button" id="btn-back-5">← Volver</button>
+            <button type="button" id="btn-calculate">Calcular</button>
+        </div>
+    </div>
+    
+    <div id="step-result" class="result hidden">
+        <div id="result-content">
+            <h3 id="res-dog-name"></h3>
+            <h1 id="res-daily-grams"></h1>
+            <h4 id="res-monthly-kgs"></h4>
+            <a href="https://ancestralfood.pet/viandas-barf/vianda-barf" target="_blank" id="purchase-link">
+            <span class="link-text">Empezá acá tu compra ancestral</span> 🐾</a>
+        </div>
+        <div class="button-group-result">
+            <button type="button" id="btn-reset">Calculá otro ancestralito🐕</button>
+            <button type="button" id="btn-back-result">← Volver</button>
+        </div>
+    </div>
+
+    <div id="custom-alert" class="alert-overlay hidden" style="opacity: 0;">
+        <div class="alert-content">
+            <p id="alert-message"></p>
+            <button type="button" id="btn-alert-close">Aceptar</button>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
