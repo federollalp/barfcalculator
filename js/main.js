@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('btn-back-result').addEventListener('click', () => ui.changeStep('step-result', 'step-5'));
 
     document.getElementById('btn-reset').addEventListener('click', () => {
-        window.location.href = 'https://barf-calculator.netlify.app';
+        window.location.href = 'https://federollalp.github.io/barfcalculator/';
     });
 
     const setupSelection = (selector, hiddenInputId, infoBoxId, infoContentId, texts, btnToDisableId = null) => {
@@ -100,4 +100,5 @@ document.addEventListener('DOMContentLoaded', () => {
         high: `<h3>Alta</h3><ul><li>Paseos de más de 1 hora.</li><li>Deporte leve.</li></ul>`,
         veryHigh: `<h3>Muy Alta</h3><ul><li>Perros competidores.</li><li>Consulta nutricional sugerida.</li></ul>`
     }, 'btn-step-4');
+
 });
