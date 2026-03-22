@@ -206,14 +206,14 @@ button:disabled {
 .result {
     display: flex;
     flex-direction: column;
-    background-color: #dedfc8;
+    background-color: #d3c5df;
     padding: 25px;
     border-radius: 15px;
     text-align: center;
     margin: 20px 0;
     width: 340px; 
     max-width: 100%;
-    border: 2px solid #BBBF9A;
+    border: 2px solid #6b3f8e;
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
 }
