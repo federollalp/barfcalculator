@@ -30,10 +30,33 @@
         </div>
     </div>
 
-    <div id="step-1" class="step">
+    <div id="step-0" class="step">
+        <label>¿Quién va a disfrutar su dieta ancestral?</label>
+        <div class="condition-grid">
+            <div class="pet-option pet-option" data-value="dog">
+                <img src="assets/icon-dog.png" alt="Perro">
+                <span>Perro</span>
+            </div>
+            <div class="pet-option pet-option" data-value="cat">
+                <img src="assets/icon-cat.png" alt="Gato">
+                <span>Gato</span>
+            </div>
+        </div>
+        <input type="hidden" id="pet-type">
+        <div class="button-group">
+            <button type="button" id="btn-step-0">Siguiente</button>
+        </div>
+        
+    </div>
+
+    <div id="step-1" class="step hidden">
         <label for="age">¿Cuántos años tiene tu ancestralito?</label>
         <select id="age"></select>
-        <button type="button" id="btn-step-1">Siguiente</button>
+        <div class="button-group">
+            <button type="button" id="btn-back-1">← Volver</button>
+            <button type="button" id="btn-step-1">Siguiente</button>
+        </div>
+        
         <div id="caldoHuesos" class="caldo">
             <div class="caldo-texto">
                 <h4>Vemos que para la edad de tu peludo, es recomendable incluir caldo de huesos🐶 (tocá la foto para pedirlo👇🏼)</h4>
@@ -56,11 +79,11 @@
     <div id="step-3" class="step hidden">
         <label>¿Cómo es la condición física de tu animal?</label>
         <div class="condition-grid">
-            <div class="condition-option" data-value="verySlow"><img src="assets/very-low-condition.png"><span>Muy delgado</span></div>
-            <div class="condition-option" data-value="low"><img src="assets/low-condition.png"><span>Delgado</span></div>
-            <div class="condition-option" data-value="normal"><img src="assets/normal-condition.png"><span>Normal</span></div>
-            <div class="condition-option" data-value="slightOverweight"><img src="assets/overweight-condition.png"><span>Sobrepeso leve</span></div>
-            <div class="condition-option" data-value="markedOverweight"><img src="assets/marked-overweight-condition.png"><span>Sobrepeso marcado</span></div>
+            <div class="condition-option" data-value="verySlow"><img src="assets/very-low-condition-dog.png"><span>Muy delgado</span></div>
+            <div class="condition-option" data-value="low"><img src="assets/low-condition-dog.png"><span>Delgado</span></div>
+            <div class="condition-option" data-value="normal"><img src="assets/normal-condition-dog.png"><span>Normal</span></div>
+            <div class="condition-option" data-value="slightOverweight"><img src="assets/overweight-condition-dog.png"><span>Sobrepeso leve</span></div>
+            <div class="condition-option" data-value="markedOverweight"><img src="assets/marked-overweight-condition-dog.png"><span>Sobrepeso marcado</span></div>
         </div>
         <input type="hidden" id="physical-condition">
         <div class="button-group">
